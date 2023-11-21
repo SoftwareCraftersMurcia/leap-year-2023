@@ -2,17 +2,17 @@
 
 Implementar un método que compruebe si un año es bisiesto o no, el cual debe satisfacer las siguientes reglas:
 
-- Un año no es bisiesto si no es divisible por 4.
-- Un año es bisiesto si es divisible por 4.
-- Un año es bisiesto si es divisible por 400.
-- Un año no es bisiesto si es divisible por 100, pero no por 400.
+- Un año NO ES bisiesto si NO es divisible por 4.
+- Un año ES bisiesto si es divisible por 4.
+- Un año ES bisiesto si es divisible por 400.
+- Un año NO ES bisiesto si es divisible por 100, pero NO por 400.
 
 Ejemplos:
 
-- 3 no es bisiesto (puesto que no es divisible por 4).
-- 8 es bisiesto (puesto que es divisible por 4).
-- 1600 es bisiesto (puesto que es divisible por 400).
-- 1800 no es bisiesto (puesto que es divisible por 100 pero no por 400).
+- 3 NO ES bisiesto (puesto que NO ES divisible por 4).
+- 8 ES bisiesto (puesto que ES divisible por 4).
+- 1600 ES bisiesto (puesto que ES divisible por 400).
+- 1800 NO ES bisiesto (es divisible por 4, pero puesto que es divisible por 100 pero NO por 400, NO es bisiesto).
 
 Para más información aquí esta el enlace en codurance de la kata: https://www.codurance.com/katas/leap-year
 
