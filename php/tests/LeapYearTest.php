@@ -17,15 +17,22 @@ final class LeapYearTest extends TestCase
      * - Un año ES bisiesto si es divisible por 4.
      * - Un año ES bisiesto si es divisible por 400.
      * - Un año NO ES bisiesto si es divisible por 100, pero NO por 400.
+     *
+     * Ejemplos:
+     *
+     * - 3 NO ES bisiesto (puesto que NO ES divisible por 4).
+     * - 8 ES bisiesto (puesto que ES divisible por 4).
+     * - 1600 ES bisiesto (puesto que ES divisible por 400).
+     * - 1800 NO ES bisiesto (es divisible por 4, pero puesto que es divisible por 100 pero NO por 400, NO es bisiesto).
      */
 
     /** @test */
-    public function give_me_a_good_name_please(): void
+    public function assert_not_divisible_by_4(): void
     {
-        $xxx = new LeapYear();
+        $leapYear = new LeapYear();
 
-        $result = $xxx->theMethod();
+        $result = $leapYear->isLeap(3);
 
-        self::assertEquals(true, $result);
+        self::assertFalse($result);
     }
 }

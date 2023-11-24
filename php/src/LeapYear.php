@@ -6,8 +6,8 @@ namespace Kata;
 
 final class LeapYear
 {
-    public function theMethod(): bool
+    public function isLeap(): bool
     {
-        return true;
+        return false;
     }
 }
