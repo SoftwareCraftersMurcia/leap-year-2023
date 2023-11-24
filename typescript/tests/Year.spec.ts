@@ -6,18 +6,8 @@ describe('Year', () => {
     expect(year.isLeap()).toBe(false)
   })
 
-  it('given a divisible number by 100 but not for 400 it return a not leap year', () => {
-    const year = new Year(100)
-    expect(year.isLeap()).toBe(false)
-  })
-
-  it('given a divisible number by 100 but not for 400 it return a not leap year', () => {
-    const year = new Year(300)
-    expect(year.isLeap()).toBe(false)
-  })
-
-  it('given a divisible number by 100 but not for 400 it return a not leap year', () => {
-    const year = new Year(1800)
+  it.each([100, 300, 1800])('given the year %p is disvisible by 100 but not by 400 it return a not leap year', (notLeapYear) => {
+    const year = new Year(notLeapYear)
     expect(year.isLeap()).toBe(false)
   })
 
