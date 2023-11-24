@@ -33,17 +33,25 @@ final class LeapYearTest extends TestCase
         $this->leapYear = new LeapYear();
     }
 
-    /** @test */
-    public function assert_not_divisible_by_4(): void
+    /**
+     * @test
+     * @dataProvider yearNotDivisibleBy4Provider
+     */
+    public function assert_not_divisible_by_4(int $year): void
     {
-        $result = $this->leapYear->isLeap(3);
+        $result = $this->leapYear->isLeap($year);
 
         self::assertFalse($result);
     }
 
+    public function yearNotDivisibleBy4Provider(): iterable
+    {
+        yield '3' => ['year' => 3];
+    }
+
     /**
      * @test
-     * @dataProvider leapYearDivisibleBy4
+     * @dataProvider leapYearDivisibleBy4Provider
      */
     public function assert_is_divisible_by_4(int $year): void
     {
@@ -52,7 +60,7 @@ final class LeapYearTest extends TestCase
         self::assertTrue($result);
     }
 
-    public static function leapYearDivisibleBy4(): iterable
+    public static function leapYearDivisibleBy4Provider(): iterable
     {
         yield '8' => ['year' => 8];
         yield '12' => ['year' => 12];
@@ -61,7 +69,7 @@ final class LeapYearTest extends TestCase
 
     /**
      * @test
-     * @dataProvider leapYearDivisibleBy100ButNotBy400
+     * @dataProvider leapYearDivisibleBy100ButNotBy400Provider
      */
     public function assert_is_not_leap_when_is_divisible_by_100_but_not_by_400(int $year): void
     {
@@ -70,7 +78,7 @@ final class LeapYearTest extends TestCase
         self::assertFalse($result);
     }
 
-    public static function leapYearDivisibleBy100ButNotBy400(): iterable
+    public static function leapYearDivisibleBy100ButNotBy400Provider(): iterable
     {
         yield '1800' => ['year' => 1800];
         yield '2100' => ['year' => 2100];
