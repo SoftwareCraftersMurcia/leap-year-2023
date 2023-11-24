@@ -1,6 +1,10 @@
 export class LeapYear {
   isLeap (year: number): boolean {
 
+    if (year % 400 === 0) {
+      return true
+    }
+    
     if (year === 100) {
       return false;
     }
