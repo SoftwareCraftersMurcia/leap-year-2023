@@ -1,6 +1,5 @@
-export class Year {
-
-  isLeap (year: number): boolean {
+const Year = {
+  isLeap: (year: number): boolean => {
     const four = 4;
     const isDivisibleByFour = (year % four) === 0;
   
@@ -13,3 +12,5 @@ export class Year {
     return isDivisibleByFour
   }
 }
+
+export default Year;
