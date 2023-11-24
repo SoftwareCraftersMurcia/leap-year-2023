@@ -8,14 +8,19 @@ final class LeapYear
 {
     public function isLeap(int $year): bool
     {
-        if ($year % 400 !== 0 && $year % 100 === 0) {
-            return false;
-        }
+        return !(
+            $this->isDivisibleBy100ButNotBy400($year)
+            || $this->isNotDivisibleBy4($year)
+        );
+    }
 
-        if ($year % 4 !== 0) {
-            return false;
-        }
+    private function isDivisibleBy100ButNotBy400(int $year): bool
+    {
+        return $year % 400 !== 0 && $year % 100 === 0;
+    }
 
-        return true;
+    private function isNotDivisibleBy4(int $year): bool
+    {
+        return $year % 4 !== 0;
     }
 }
