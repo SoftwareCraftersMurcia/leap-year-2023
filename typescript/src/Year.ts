@@ -3,15 +3,18 @@ export class Year {
   constructor (private readonly year: number) {}
   
   private matchTheFourRule (): boolean {
-    return (this.year % 4) === 0;
+    const four = 4;
+    return (this.year % four) === 0;
   }
 
   private matchTheOneHundredRule (): boolean {
-    return this.year % 100 === 0 
+    const oneHundred = 100;
+    return this.year % oneHundred === 0 
   }
 
   private matchTheFourHundredRule (): boolean {
-    return this.year % 400 !== 0 
+    const fourHundred = 400;
+    return this.year % fourHundred !== 0 
   }
 
   isLeap (): boolean {
