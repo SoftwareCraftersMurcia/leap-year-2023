@@ -15,4 +15,9 @@ describe('Year', () => {
     const year = new Year(16)
     expect(year.isLeap()).toBe(true)
   })
+
+  it('given a divisible number by 4 it return a leap year', () => {
+    const year = new Year(12)
+    expect(year.isLeap()).toBe(true)
+  })
 })
