@@ -1,14 +1,17 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace KataTests;
 
-use Kata\TheClass;
+use Kata\LeapYear;
 use PHPUnit\Framework\TestCase;
 
-class MyClassTest extends TestCase
+final class LeapYearTest extends TestCase
 {
     /**
-     * Implementar un método que compruebe si un año es bisiesto o no, el cual debe satisfacer las siguientes reglas:
+     * Implementar un método que compruebe si un año es bisiesto o no,
+     * el cual debe satisfacer las siguientes reglas:
      *
      * - Un año NO ES bisiesto si NO es divisible por 4.
      * - Un año ES bisiesto si es divisible por 4.
@@ -19,7 +22,7 @@ class MyClassTest extends TestCase
     /** @test */
     public function give_me_a_good_name_please(): void
     {
-        $xxx = new TheClass();
+        $xxx = new LeapYear();
 
         $result = $xxx->theMethod();
 

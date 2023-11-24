@@ -1,8 +1,10 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace Kata;
 
-class TheClass
+final class LeapYear
 {
     public function theMethod(): bool
     {
