@@ -12,10 +12,10 @@ final class LeapYear
             return false;
         }
 
-        if ($year % 4 === 0) {
-            return true;
+        if ($year % 4 !== 0) {
+            return false;
         }
 
-        return false;
+        return true;
     }
 }
