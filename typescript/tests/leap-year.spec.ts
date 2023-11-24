@@ -13,6 +13,10 @@ describe('Leap year', () => {
     expect(leapYear.isLeap(3)).toBeFalsy()
   })
 
+  it('should be a leap year when year is four', () => {
+    expect(leapYear.isLeap(4)).toBeTruthy()
+  })
+
   it('should be a leap year when year is eight', () => {
     expect(leapYear.isLeap(8)).toBeTruthy()
   })
