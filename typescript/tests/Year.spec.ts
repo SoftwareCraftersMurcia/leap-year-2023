@@ -6,11 +6,11 @@ describe('Year', () => {
     expect(Year.isLeap(notLeapYear)).toBe(false)
   })
 
-  it.each([100, 200, 300])('given the year %p is disvisible by 100 it return a not leap year', (notLeapYear) => {
+  it.each([100, 200, 300])('given the year %p is divisible by 100 it return a not leap year', (notLeapYear) => {
     expect(Year.isLeap(notLeapYear)).toBe(false)
   })
   
-  it.each([500, 600, 700])('given the year %p is not by 400 it return a not leap year', (notLeapYear) => {
+  it.each([500, 600, 700])('given the year %p is not divisible by 400 it return a not leap year', (notLeapYear) => {
     expect(Year.isLeap(notLeapYear)).toBe(false)
   })
 
