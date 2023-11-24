@@ -8,7 +8,7 @@ final class LeapYear
 {
     public function isLeap(int $year): bool
     {
-        if ($year === 1800 || $year === 2100 || $year === 2200) {
+        if ($year % 400 !== 0 && $year % 100 === 0) {
             return false;
         }
 
