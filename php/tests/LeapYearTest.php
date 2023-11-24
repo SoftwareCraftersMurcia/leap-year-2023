@@ -55,4 +55,14 @@ final class LeapYearTest extends TestCase
 
         self::assertTrue($result);
     }
+
+    /** @test */
+    public function assert_16_is_divisible_by_4(): void
+    {
+        $leapYear = new LeapYear();
+
+        $result = $leapYear->isLeap(16);
+
+        self::assertTrue($result);
+    }
 }
