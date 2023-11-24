@@ -1,26 +1,23 @@
 export class Year {
-  
-  constructor (private readonly year: number) {}
-  
-  private matchTheFourRule (): boolean {
+  private matchTheFourRule (year: number): boolean {
     const four = 4;
-    return (this.year % four) === 0;
+    return (year % four) === 0;
   }
 
-  private matchTheOneHundredRule (): boolean {
+  private matchTheOneHundredRule (year: number): boolean {
     const oneHundred = 100;
-    return this.year % oneHundred === 0 
+    return year % oneHundred === 0 
   }
 
-  private matchTheFourHundredRule (): boolean {
+  private matchTheFourHundredRule (year: number): boolean {
     const fourHundred = 400;
-    return this.year % fourHundred !== 0 
+    return year % fourHundred !== 0 
   }
 
-  isLeap (): boolean {
-    if (this.matchTheOneHundredRule() && this.matchTheFourHundredRule()) {
+  isLeap (year: number): boolean {
+    if (this.matchTheOneHundredRule(year) && this.matchTheFourHundredRule(year)) {
       return false
     }
-    return this.matchTheFourRule()
+    return this.matchTheFourRule(year)
   }
 }
