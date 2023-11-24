@@ -35,4 +35,14 @@ final class LeapYearTest extends TestCase
 
         self::assertFalse($result);
     }
+
+    /** @test */
+    public function assert_is_divisible_by_4(): void
+    {
+        $leapYear = new LeapYear();
+
+        $result = $leapYear->isLeap(8);
+
+        self::assertTrue($result);
+    }
 }
