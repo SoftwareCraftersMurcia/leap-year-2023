@@ -17,11 +17,8 @@ describe('Leap year', () => {
     expect(leapYear.isLeap(3)).toBeFalsy()
   })
 
-  it('should not be a leap year when year is 100', () => {
-    expect(leapYear.isLeap(100)).toBeFalsy()
-  })
-  it('should not be a leap year when year is 200', () => {
-    expect(leapYear.isLeap(200)).toBeFalsy()
+  it.each([100, 200])('should not be a leap year when year is %i', (year) => {
+    expect(leapYear.isLeap(year)).toBeFalsy()
   })
 
   it.each([1600])('should be a leap year when year is %i', (year) => {
