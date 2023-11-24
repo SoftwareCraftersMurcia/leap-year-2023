@@ -1,9 +1,9 @@
-import { Example } from '../src/Example'
+import { Year } from '../src/Example'
 
 describe('kata-setup', () => {
-  it('example test', () => {
-    const example = new Example()
+  it('given a not divisible number by 4 it return leap year', () => {
+    const year  = new Year(3)
 
-    expect(example.method()).toBe(true)
+    expect(year.isLeap()).toBe(false)
   })
 })

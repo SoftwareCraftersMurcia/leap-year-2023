@@ -1,5 +1,9 @@
-export class Example {
-  method (): boolean {
-    return true
+export class Year {
+
+  constructor (private year: number) {
+
+  }
+  isLeap (): boolean {
+    return false;
   }
 }
