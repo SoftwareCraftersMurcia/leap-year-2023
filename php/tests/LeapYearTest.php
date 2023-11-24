@@ -56,33 +56,23 @@ final class LeapYearTest extends TestCase
         yield '16' => ['year' => 16];
     }
 
-    /** @test */
-    public function assert_1800_is_not_leap_when_is_divisible_by_100_but_not_by_400(): void
+    /**
+     * @test
+     * @dataProvider leapYearDivisibleBy100ButNotBy400
+     */
+    public function assert_is_not_leap_when_is_divisible_by_100_but_not_by_400(int $year): void
     {
         $leapYear = new LeapYear();
 
-        $result = $leapYear->isLeap(1800);
+        $result = $leapYear->isLeap($year);
 
         self::assertFalse($result);
     }
 
-    /** @test */
-    public function assert_2100_is_not_leap_when_is_divisible_by_100_but_not_by_400(): void
+    public static function leapYearDivisibleBy100ButNotBy400(): iterable
     {
-        $leapYear = new LeapYear();
-
-        $result = $leapYear->isLeap(2100);
-
-        self::assertFalse($result);
-    }
-
-    /** @test */
-    public function assert_2200_is_not_leap_when_is_divisible_by_100_but_not_by_400(): void
-    {
-        $leapYear = new LeapYear();
-
-        $result = $leapYear->isLeap(2200);
-
-        self::assertFalse($result);
+        yield '1800' => ['year' => 1800];
+        yield '2100' => ['year' => 2100];
+        yield '2200' => ['year' => 2200];
     }
 }
