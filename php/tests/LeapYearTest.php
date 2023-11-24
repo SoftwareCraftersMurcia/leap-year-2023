@@ -36,33 +36,23 @@ final class LeapYearTest extends TestCase
         self::assertFalse($result);
     }
 
-    /** @test */
-    public function assert_is_divisible_by_4(): void
+    /**
+     * @test
+     * @dataProvider leapYearDivisibleBy4
+     */
+    public function assert_is_divisible_by_4(int $year): void
     {
         $leapYear = new LeapYear();
 
-        $result = $leapYear->isLeap(8);
+        $result = $leapYear->isLeap($year);
 
         self::assertTrue($result);
     }
 
-    /** @test */
-    public function assert_12_is_divisible_by_4(): void
+    public static function leapYearDivisibleBy4(): iterable
     {
-        $leapYear = new LeapYear();
-
-        $result = $leapYear->isLeap(12);
-
-        self::assertTrue($result);
-    }
-
-    /** @test */
-    public function assert_16_is_divisible_by_4(): void
-    {
-        $leapYear = new LeapYear();
-
-        $result = $leapYear->isLeap(16);
-
-        self::assertTrue($result);
+        yield '8' => ['year' => 8];
+        yield '12' => ['year' => 12];
+        yield '16' => ['year' => 16];
     }
 }
